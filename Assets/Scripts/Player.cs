@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     [SerializeField] float velocidad = 5f;
     [SerializeField] Rigidbody rb;
 
+    float rotacion;
+
     void Awake()
     {
         controls = new PlayerActions();
@@ -24,8 +26,9 @@ public class Player : MonoBehaviour
     void Move()
     {
         //Debug.Log("a nmms nos movemos");
-        rb.position += MovementAxis * velocidad * Time.deltaTime;
-        
+        rotacion += Axis.x;
+        rb.rotation = Quaternion.Euler(rb.rotation.x, rotacion, rb.rotation.z);
+        rb.position +=  Direction * velocidad * Time.deltaTime;
     }
 
     void Boost()
@@ -48,7 +51,7 @@ public class Player : MonoBehaviour
     }
 
     Vector2 Axis => controls.PlayerControls.Movement.ReadValue<Vector2>();
-    Vector3 MovementAxis => new Vector3(Axis.x, 0f, Axis.y);
+    Vector3 MovementAxis => new Vector3(0, 0f, Axis.y);
     Vector3 Direction => rb.rotation * MovementAxis;
 
 }
