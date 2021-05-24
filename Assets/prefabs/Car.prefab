@@ -27,8 +27,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2775458232095795309}
-  m_LocalRotation: {x: 0.20859241, y: -0.0021637194, z: 0.0004614881, w: 0.97800016}
-  m_LocalPosition: {x: 0.01, y: 1.0099945, z: -2.26}
+  m_LocalRotation: {x: 0.20859216, y: -0.002163688, z: 0.0004614808, w: 0.9780002}
+  m_LocalPosition: {x: 0.01, y: 1.01, z: -2.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2775458233259719135}
@@ -175,7 +175,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2775458232352075319}
-  m_LocalRotation: {x: 0.20859216, y: -0.0021637196, z: 0.00046148754, w: 0.9780002}
+  m_LocalRotation: {x: 0.20859216, y: -0.002163688, z: 0.0004614808, w: 0.9780002}
   m_LocalPosition: {x: 0.01, y: 1.01, z: -2.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -743,6 +743,10 @@ PrefabInstance:
       value: Carro low poly
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5714b33d6cbe3f7499871dccd95ec1dd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779745573541866595, guid: 5714b33d6cbe3f7499871dccd95ec1dd, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
