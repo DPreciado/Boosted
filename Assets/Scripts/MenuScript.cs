@@ -38,8 +38,8 @@ public class MenuScript : MonoBehaviour
         //clicked join
         if(inputField.text.Length <= 0)
         {
-            //NetworkManager.Singleton.GetComponent<UNetTransport>().ConnectAddress = "127.0.0.1";
-            NetworkManager.Singleton.GetComponent<UNetTransport>().ConnectAddress = "192.168.56.1";
+            NetworkManager.Singleton.GetComponent<UNetTransport>().ConnectAddress = "127.0.0.1";
+            //NetworkManager.Singleton.GetComponent<UNetTransport>().ConnectAddress = "177.227.46.140";
         }
         else
         {
