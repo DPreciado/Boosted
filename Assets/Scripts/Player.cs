@@ -15,6 +15,12 @@ public class Player : NetworkBehaviour
 
     float rotacion;
 
+    void Awake()
+    {
+        controls = new PlayerActions();
+        rb = GetComponent<Rigidbody>();
+        //velocidadTotal = velocidadMaxima;
+    }
     void Start()
     {
         if(IsLocalPlayer)
@@ -23,12 +29,6 @@ public class Player : NetworkBehaviour
             controls.PlayerControls.Boost.canceled += _ => CancelBoost();
             controls.PlayerControls.Movement.performed += _ => Move();
         }
-    }
-    void Awake()
-    {
-        controls = new PlayerActions();
-        rb = GetComponent<Rigidbody>();
-        //velocidadTotal = velocidadMaxima;
     }
 
 

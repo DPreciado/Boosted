@@ -22,7 +22,7 @@ public class MenuScript : MonoBehaviour
         if(inputField.text.Length <= 0)
         {
             //NetworkManager.Singleton.GetComponent<UNetTransport>().ConnectAddress = "127.0.0.1";
-            NetworkManager.Singleton.GetComponent<UNetTransport>().ConnectAddress = "192.168.100.4";
+            NetworkManager.Singleton.GetComponent<UNetTransport>().ConnectAddress = "177.227.46.140";
         }
         else
         {
