@@ -39,7 +39,7 @@ public class MenuScript : MonoBehaviour
         if(inputField.text.Length <= 0)
         {
             //NetworkManager.Singleton.GetComponent<UNetTransport>().ConnectAddress = "127.0.0.1";
-            NetworkManager.Singleton.GetComponent<UNetTransport>().ConnectAddress = "192.168.100.4";
+            NetworkManager.Singleton.GetComponent<UNetTransport>().ConnectAddress = "192.168.56.1";
         }
         else
         {
