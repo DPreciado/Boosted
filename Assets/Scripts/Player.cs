@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MLAPI;
+using MLAPI.NetworkVariable;
 
-
-public class Player : MonoBehaviour
+public class Player : NetworkBehaviour
 {
     PlayerActions controls;
     [SerializeField] float velocidadMaxima = 20f;
@@ -14,6 +15,15 @@ public class Player : MonoBehaviour
 
     float rotacion;
 
+    void Start()
+    {
+        if(IsLocalPlayer)
+        {
+            controls.PlayerControls.Boost.performed += _ => Boost();
+            controls.PlayerControls.Boost.canceled += _ => CancelBoost();
+            controls.PlayerControls.Movement.performed += _ => Move();
+        }
+    }
     void Awake()
     {
         controls = new PlayerActions();
@@ -21,15 +31,10 @@ public class Player : MonoBehaviour
         //velocidadTotal = velocidadMaxima;
     }
 
-    void Start()
-    {
-        controls.PlayerControls.Boost.performed += _ => Boost();
-        controls.PlayerControls.Boost.canceled += _ => CancelBoost();
-        controls.PlayerControls.Movement.performed += _ => Move();
-    }
 
     void Move()
     {
+        
         if(velocidadTotal < velocidadMaxima)
         {
             velocidadTotal += velocidadMaxima/100 * velocidadMaxima/100;
@@ -53,7 +58,9 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        Move();
+        //if(!NetworkManager.Singleton.IsHost) return;
+        if(!IsLocalPlayer) return;
+            Move();
     }
 
     private void OnEnable()
