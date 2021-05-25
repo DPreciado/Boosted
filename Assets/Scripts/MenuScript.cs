@@ -33,6 +33,12 @@ public class MenuScript : MonoBehaviour
         menuPanel.SetActive(false);
         HUDPanel.SetActive(true);
     }
+
+    public void Salir()
+    {
+        Application.Quit();
+    }
+    
     public void Join()
     {
         //clicked join
