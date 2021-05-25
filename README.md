@@ -12,3 +12,4 @@ Documento de diseño: https://docs.google.com/document/d/11fONqWlnK3ecOyiuWRxeMK
 
 Documentación: https://docs.google.com/document/d/15xeFFRVMSEol6P3H5xMhZSYFYpCMooiu3F23Ou78WEE/edit#
 
+Video Gameplay: https://drive.google.com/drive/folders/16wGjzCmmG6OWx1KMgYTq5DuwMG9MUTUu?usp=sharing
