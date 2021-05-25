@@ -15,7 +15,7 @@ public class LapCheckPoint : MonoBehaviour
             {
                 Car.CheckpointIndex = Index;
 
-                Debug.Log(Index);
+                //Debug.Log(Index);
             }
         }
     }

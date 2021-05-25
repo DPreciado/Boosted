@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MLAPI;
-using MLAPI.Spawning;
 using MLAPI.Transports.UNET;
-using UnityEngine.UI;
 using TMPro;
 
 public class MenuScript : MonoBehaviour
 {
     public GameObject menuPanel;
+    public GameObject HUDPanel;
     public TMP_InputField inputField;
 
     private void Start()
@@ -32,6 +31,7 @@ public class MenuScript : MonoBehaviour
     {
         NetworkManager.Singleton.StartHost();
         menuPanel.SetActive(false);
+        HUDPanel.SetActive(true);
     }
     public void Join()
     {
@@ -48,6 +48,7 @@ public class MenuScript : MonoBehaviour
         NetworkManager.Singleton.NetworkConfig.ConnectionData = System.Text.Encoding.ASCII.GetBytes("pass");
         NetworkManager.Singleton.StartClient();
         menuPanel.SetActive(false);
+        HUDPanel.SetActive(true);
     }
 
 
