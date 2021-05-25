@@ -7,12 +7,11 @@ public class CarController : NetworkBehaviour
 {
     PlayerActions controls;
     public Rigidbody theRB;
-
     public Transform cameraTransform;
 
-    public float forwardAccel = 8f, reverseAccel = 4f, maxSpeed = 50f, turnStrength = 180f, gravityForce = 10f, dragOnGround = 3f;
+    public float forwardAccel = 8f, reverseAccel = 4f, maxSpeed = 50f, turnStrength = 180f, gravityForce = 10f, dragOnGround = 3f, boost = 5f;
 
-    private float speedInput, turnInput;
+    private float speedInput, turnInput, auxSpeed;
 
     private bool grounded;
 
@@ -80,17 +79,18 @@ public class CarController : NetworkBehaviour
     }
     void CancelMove()
     {
-        speedInput = Axis.y *  reverseAccel * 1000f;
+        speedInput = Axis.y * reverseAccel * 1000f;
     }
 
     void Boost()
     {
-        //Debug.Log("boost");
+        auxSpeed = forwardAccel;
+        forwardAccel += boost;
     }
 
     void CancelBoost()
     {
-
+        forwardAccel = auxSpeed;
     }
 
     private void FixedUpdate()
@@ -130,8 +130,6 @@ public class CarController : NetworkBehaviour
             emissionModule.rateOverTime = emissionRate;
         }
     }
-
-    
 
     Vector2 Axis => controls.PlayerControls.Movement.ReadValue<Vector2>();
 }
